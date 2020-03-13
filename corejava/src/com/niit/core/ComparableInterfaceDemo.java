@@ -1,0 +1,43 @@
+package com.niit.core;
+import java.util.*;
+class Employee222 implements Comparable<Employee222>
+{
+    String name;
+    int age;
+    int experience;
+    
+    public Employee222(String name, int age, int experience)
+    {
+        this.name = name;
+        this.age = age;
+        this.experience = experience;
+    }
+    
+    public String toString() // LINE B
+    {
+        return "Name : " + name + " Age : " + age + " Experience : " + experience;
+    }
+    
+    public int compareTo(Employee222 o) 
+    {
+        return experience - o.experience;
+    }
+
+	
+}
+
+public class ComparableInterfaceDemo
+{
+
+    public static void main(String[] args)
+    {
+        ArrayList list = new ArrayList(); 
+        list.add(new Employee222("Siva", 35, 12));
+        list.add(new Employee222("Maheesh", 25, 3));
+        list.add(new Employee222("Narayan", 26, 2));
+        list.add(new Employee222("Srinath", 24, 3));
+        System.out.println(list);
+        Collections.sort(list); 
+        System.out.println(list);
+    }
+}
